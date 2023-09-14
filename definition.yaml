@@ -1,0 +1,44 @@
+asyncapi: 2.6.0
+info:
+  title: VALAWAI C1 Moral Topic Similarity Calculator
+  version: '0.1.0'
+  license:
+    name: GPL3.0
+    url: https://github.com/VALAWAI/C1_moraltopic_similarity/blob/main/LICENSE
+defaultContentType: application/json
+channels:
+  moraltopic_similarity:
+    publish:
+      message:
+        payload:
+          type: object
+          additionalProperties: false
+          properties:
+            user_moral: 
+              type: object
+              examples:
+                - [.8, .2] 
+            user_topic: 
+              type: object
+              examples:
+                - [.5, .3, .2] 
+            item_moral: 
+              type: object
+              examples:
+                - [.8, .2]
+            item_topic: 
+              type: object
+              examples:
+                - [.5, .3, .2] 
+            moral_weight : 
+              type: number
+              example: 
+                .5
+            moral_noise :
+              type: number
+              example: 
+                0
+            topic_noise : 
+              type: number
+              example: 
+                0
